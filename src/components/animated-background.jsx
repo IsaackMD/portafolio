@@ -1,9 +1,7 @@
-"use client"
-
 export const AnimatedBackground = () => {
     return (
         <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-            <div className="absolute inset-0 bg-[#0b0b12]" />
+            {/* <div className="absolute inset-0 bg-[#0b0b12]" /> */}
             {/* Gradiente animado principal */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 animate-gradient" />
 

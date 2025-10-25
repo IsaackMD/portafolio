@@ -1,5 +1,3 @@
-"use client"
-
 import { Button } from "./ui/button"
 import { Github, Linkedin, Mail } from "lucide-react"
 import { ScrollReveal } from "./scroll-reveal"
@@ -13,7 +11,7 @@ export function HomeSection() {
             <div className="space-y-6">
               <div className="space-y-2">
                 <h1 className="text-5xl md:text-6xl font-bold text-balance">Desarrollador Full Stack</h1>
-                <p className="text-xl text-muted-foreground">Junior Developer</p>
+                <p className="text-xl text-muted-foreground">8+ meses de experiencia real</p>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Construyo aplicaciones web modernas y escalables utilizando las últimas tecnologías. Apasionado por
@@ -24,7 +22,7 @@ export function HomeSection() {
                   <Mail className="w-4 h-4" />
                   Contactar
                 </Button>
-                <Button size="lg" variant="outline" className="gap-2 bg-transparent hover-glow">
+                <Button size="lg" variant="outline" className="gap-2 bg-transparent hover-glow" onClick ={ ()=> window.open("https://github.com/IsaackMD")}>
                   <Github className="w-4 h-4" />
                   GitHub
                 </Button>
@@ -37,7 +35,8 @@ export function HomeSection() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://mx.linkedin.com/in/kisb03?trk=people-guest_people_search-card"
+                  target="_blank"
                   className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-125"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -53,7 +52,9 @@ export function HomeSection() {
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 animate-gradient animate-float"></div>
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 animate-gradient animate-float">
+              <img src="../../public/yo.jpg" width={1000} className="rounded-2xl"></img>
+              </div>
             </div>
           </ScrollReveal>
         </div>
