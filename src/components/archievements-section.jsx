@@ -1,44 +1,46 @@
-import { Card } from "./ui/card"
-import { ScrollReveal } from "./scroll-reveal"
-import { Award, Briefcase, GraduationCap, Code2 } from "lucide-react"
+import { Card } from "./ui/card";
+import { ScrollReveal } from "./scroll-reveal";
+import { Award, Briefcase, GraduationCap, Code2 } from "lucide-react";
 
 export function AchievementsSection() {
   const achievements = [
-    {
-      icon: GraduationCap,
-      title: "Certificación de CSS Avanzado",
-      organization: "Desafío Latam",
-      date: "2025",
-      description: "Curso completo de desarrollo de estilos para aplicaciones web con CSS",
-      color: "from-green-500 to-emerald-500",
-    },
-    {
-      icon: Award,
-      title: "Certificación EF SET B2",
-      organization: "Microsoft Learn",
-      date: "2023",
-      description: "Certificado de test de idioma ingles",
-      color: "from-blue-500 to-emerald-500",
-    },
     {
       icon: Code2,
       title: "Google Cloud Computing Foundations Certificate",
       organization: "Google Cloud",
       date: "2024",
-      description: "Certificación que ayuda a desarrollar competencias técnicas en computación en la nube",
+      description:
+        "Certificación enfocada en fundamentos de computación en la nube, incluyendo infraestructura, redes, almacenamiento, seguridad e introducción a servicios de Google Cloud.",
       color: "from-blue-500 to-green-500",
     },
     {
       icon: Code2,
-      title: "Implement Load Balancing on Compute Engine Skill ",
+      title: "Implement Load Balancing on Compute Engine",
       organization: "Google Cloud",
       date: "2024",
-      description: "Implementar equilibrio de carga en Compute Engine para demostrar habilidades en lo siguiente: escribir comandos gcloud y usar Cloud Shell, crear e implementar máquinas virtuales en Compute Engine, ejecutar aplicaciones en contenedores en Google Kubernetes Engine y configurar balanceadores de carga de red y HTTP.",
+      description:
+        "Implementación de balanceadores de carga en Google Cloud utilizando Compute Engine, Cloud Shell y gcloud CLI. Incluye despliegue de máquinas virtuales, configuración de aplicaciones y gestión de tráfico mediante balanceo HTTP y de red.",
       color: "from-blue-500 to-green-500",
     },
-
-  ]
-
+    {
+      icon: Award,
+      title: "EF SET English Certificate B2",
+      organization: "EF Standard English Test",
+      date: "2023",
+      description:
+        "Certificación de nivel B2 (Upper Intermediate) que acredita comprensión y comunicación en inglés en contextos profesionales y técnicos.",
+      color: "from-blue-500 to-emerald-500",
+    },
+    {
+      icon: GraduationCap,
+      title: "Curso de CSS Avanzado",
+      organization: "Desafío Latam",
+      date: "2025",
+      description:
+        "Curso enfocado en desarrollo de interfaces modernas utilizando CSS avanzado, responsive design y buenas prácticas para aplicaciones web.",
+      color: "from-green-500 to-emerald-500",
+    },
+  ];
   const experiences = [
     {
       icon: Briefcase,
@@ -46,31 +48,54 @@ export function AchievementsSection() {
       company: "Gobierno del Estado de Hidalgo",
       period: "(Agosto 2025 – Actualidad)",
       description:
-        "Desarrollo de aplicaciones web completas utilizando React, Node.js y bases de datos SQL. Implementación de APIs RESTful y gestión de bases de datos, junto a interfaces de usuario diseñadas para cumplir con las principales necesidades del usuario final.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Express"],
+        "Desarrollo y mantenimiento de sistemas internos utilizados por dependencias gubernamentales. Lideré la reingeniería de un sistema de inventario tecnológico migrando una base de datos heredada de MongoDB a PostgreSQL, normalizando datos y eliminando duplicidad anual de registros. También participé en el desarrollo de RACI, una plataforma interna para gestión de actividades con autenticación de dos factores, chat en tiempo real mediante WebSockets, notificaciones push con Firebase Cloud Messaging y adjuntos de archivos. Actualmente trabajo en un sistema para la gestión de solicitudes de pre-adquisición de licencias que agiliza procesos administrativos para directores de área.",
+      technologies: [
+        "React",
+        "JavaScript",
+        "TypeScript",
+        "Express",
+        "PostgreSQL",
+        "Sequelize",
+        "WebSockets",
+        "Firebase Cloud Messaging",
+      ],
       color: "from-orange-500 to-red-500",
     },
     {
       icon: Briefcase,
-      title: "Desarrollador Web Jr. ",
+      title: "Desarrollador .NET",
       company: "Consorcio de Desarrollo Web (IMOVS)",
       period: "(Abril – Agosto 2025)",
       description:
-        "Participe en el desarrollo de aplicaciones web para empresas de renombre dentro de aduanas, en cargado de desarrollar un sistema capas de cumplir con la funcionalidad de manejar registros de las transacciones que manejan, cumpliendo con la logica de negocio de la empresa.",
-      technologies: ["C#", ".NET", "SQL Server", "ASP.NET Core"],
+        "Participé en el desarrollo y mantenimiento de sistemas administrativos para el sector aduanal. Implementé consultas avanzadas en LINQ para consolidar información de productos, estados de recepción y excepciones. También modifiqué una API en ASP.NET para automatizar el cálculo de tarifas aduanales considerando peso, tiempo, tipo de mercancía y almacenamiento. Implementé Entity Framework Code First con migraciones para el versionamiento de bases de datos y participé en la migración de funcionalidades de GeneXus a una arquitectura basada en .NET y principios SOLID.",
+      technologies: [
+        "C#",
+        ".NET",
+        "ASP.NET",
+        "Entity Framework",
+        "LINQ",
+        "SQL Server",
+      ],
       color: "from-blue-500 to-purple-500",
     },
     {
       icon: GraduationCap,
-      title: "Prácticas Profesionales ",
+      title: "Prácticas Profesionales",
       company: "Gobierno del Estado de Hidalgo",
-      period: " (Enero – Abril 2025)",
+      period: "(Febrero – Septiembre 2024)",
       description:
-        "Participe en el desarrollo de la aplicación web para la inscripción de menores de edad a curso de verano por parte de gobierno para los familiares que trabajan en gobhierno, de igual forma lidere el desarrollo de un sistema de inventarios interno para ayudar a solucionar la divergencia de información.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Express"],
+        "Desarrollé una aplicación web para la inscripción de menores a cursos de verano institucionales utilizando Symfony y PostgreSQL. El sistema validaba automáticamente la identidad mediante CURP, permitía aprobar o rechazar solicitudes, asignar grupos por edades y gestionar la información de los participantes. Este proyecto ayudó a digitalizar y organizar el proceso de registro de manera más eficiente.",
+      technologies: [
+        "PHP",
+        "Symfony",
+        "PostgreSQL",
+        "JavaScript",
+        "HTML",
+        "CSS",
+      ],
       color: "from-blue-500 to-emerald-500",
     },
-  ]
+  ];
 
   return (
     <section id="achievements" className="py-25 px-4 relative overflow-hidden">
@@ -85,16 +110,19 @@ export function AchievementsSection() {
           <div className="space-y-8">
             <ScrollReveal>
               <div className="space-y-4 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-balance">Experiencia</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-balance">
+                  Experiencia
+                </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-                  Mi trayectoria en el desarrollo de software y proyectos realizados
+                  Mi trayectoria en el desarrollo de software y proyectos
+                  realizados
                 </p>
               </div>
             </ScrollReveal>
 
             <div className="space-y-6">
               {experiences.map((experience, index) => {
-                const Icon = experience.icon
+                const Icon = experience.icon;
                 return (
                   <ScrollReveal key={experience.title} delay={index * 100}>
                     <Card className="group relative p-8 hover-lift transition-all duration-500 overflow-hidden cursor-pointer">
@@ -111,15 +139,21 @@ export function AchievementsSection() {
 
                         <div className="flex-1 space-y-4">
                           <div className="space-y-2">
-                            <h3 className="text-2xl font-semibold text-balance">{experience.title}</h3>
+                            <h3 className="text-2xl font-semibold text-balance">
+                              {experience.title}
+                            </h3>
                             <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                              <span className="font-medium">{experience.company}</span>
+                              <span className="font-medium">
+                                {experience.company}
+                              </span>
                               <span>•</span>
                               <span>{experience.period}</span>
                             </div>
                           </div>
 
-                          <p className="text-muted-foreground text-pretty leading-relaxed">{experience.description}</p>
+                          <p className="text-muted-foreground text-pretty leading-relaxed">
+                            {experience.description}
+                          </p>
 
                           <div className="flex flex-wrap gap-2">
                             {experience.technologies.map((tech) => (
@@ -135,7 +169,7 @@ export function AchievementsSection() {
                       </div>
                     </Card>
                   </ScrollReveal>
-                )
+                );
               })}
             </div>
           </div>
@@ -143,16 +177,19 @@ export function AchievementsSection() {
           <div className="space-y-8">
             <ScrollReveal>
               <div className="space-y-4 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-balance">Certificaciones y Cursos</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-balance">
+                  Certificaciones y Cursos
+                </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-                  Formación continua y certificaciones que respaldan mis habilidades técnicas
+                  Formación continua y certificaciones que respaldan mis
+                  habilidades técnicas
                 </p>
               </div>
             </ScrollReveal>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {achievements.map((achievement, index) => {
-                const Icon = achievement.icon
+                const Icon = achievement.icon;
                 return (
                   <ScrollReveal key={achievement.title} delay={index * 100}>
                     <Card className="group relative p-6 space-y-4 hover-lift transition-all duration-500 overflow-hidden cursor-pointer h-full">
@@ -168,9 +205,13 @@ export function AchievementsSection() {
                         </div>
 
                         <div className="space-y-2">
-                          <h3 className="text-xl font-semibold text-balance">{achievement.title}</h3>
+                          <h3 className="text-xl font-semibold text-balance">
+                            {achievement.title}
+                          </h3>
                           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <span className="font-medium">{achievement.organization}</span>
+                            <span className="font-medium">
+                              {achievement.organization}
+                            </span>
                             <span>•</span>
                             <span>{achievement.date}</span>
                           </div>
@@ -182,14 +223,12 @@ export function AchievementsSection() {
                       </div>
                     </Card>
                   </ScrollReveal>
-                )
+                );
               })}
             </div>
           </div>
-
-
         </div>
       </div>
     </section>
-  )
+  );
 }

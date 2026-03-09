@@ -62,7 +62,7 @@ export function ProjectsSection() {
         <div className="space-y-12">
           <ScrollReveal>
             <div className="space-y-4 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold">Proyectos</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Proyectos Personales</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Algunos de los proyectos en los que he trabajado
               </p>

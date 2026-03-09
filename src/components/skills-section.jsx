@@ -1,6 +1,7 @@
 import { ScrollReveal } from "./scroll-reveal";
 import ReactIcon from '../../public/icons/react.webp';
 import JavaScriptIcon from '../../public/icons/javascript.webp';
+import TypescriptIcon from '../../public/icons/ts.webp';
 import HTML5Icon from '../../public/icons/html.webp';
 import CSS3Icon from '../../public/icons/css.webp';
 import TailwindIcon from '../../public/icons/tailwind.png';
@@ -20,8 +21,9 @@ import SequelizeIcon from '../../public/icons/sequelize.png';
 export function SkillsSection() {
   const skills = [
     // Frontend
-    { name: "React.js", icon: ReactIcon, category: "Frontend" },
-    { name: "JavaScript", icon: JavaScriptIcon, category: "Frontend" },
+    { name: "React Js", icon: ReactIcon, category: "Frontend" },
+    { name: "Javascript", icon: JavaScriptIcon, category: "Frontend" },
+    { name: "Typescript", icon: TypescriptIcon, category: "Frontend" },
     { name: "HTML5", icon: HTML5Icon, category: "Frontend" },
     { name: "CSS3", icon: CSS3Icon, category: "Frontend" },
     { name: "Tailwind CSS", icon: TailwindIcon, category: "Frontend" },
@@ -29,7 +31,7 @@ export function SkillsSection() {
     { name: "Hero UI", icon: Hero, category: "Frontend" },
 
     // Backend
-    { name: "Express.js", icon: NodeIcon, category: "Backend" },
+    { name: "Node Js", icon: NodeIcon, category: "Backend" },
     // { name: "C#", icon: CSharpIcon, category: "Backend" },
     { name: ".NET Core", icon: DotNetIcon, category: "Backend" },
     { name: ".NET Framework", icon: DotNetIcon, category: "Backend" },
@@ -74,7 +76,7 @@ export function SkillsSection() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-12">
             {categories.map((category, categoryIndex) => (
               <div key={category.id} className="space-y-8">
                 <ScrollReveal delay={categoryIndex * 100}>
