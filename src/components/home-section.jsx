@@ -1,7 +1,7 @@
 import { Button } from "./ui/button"
 import { Github, Linkedin, Mail } from "lucide-react"
 import { ScrollReveal } from "./scroll-reveal"
-
+import img from '../../public/yo.jpg'
 export function HomeSection() {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center px-4 pt-20">
@@ -53,7 +53,7 @@ export function HomeSection() {
           <ScrollReveal delay={200}>
             <div className="relative">
               <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 animate-gradient animate-float">
-              <img src="../../public/yo.jpg" width={1000} className="rounded-2xl"></img>
+              <img src={img} width={1000} className="rounded-2xl"></img>
               </div>
             </div>
           </ScrollReveal>

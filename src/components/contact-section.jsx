@@ -24,7 +24,7 @@ export function ContactSection() {
               </p>
             </div>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="gap-8">
             <div className="space-y-6">
               <ScrollReveal delay={100}>
                 <Card className="p-6 space-y-4 hover-lift hover:border-accent/50 transition-all duration-300">
@@ -34,7 +34,7 @@ export function ContactSection() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-sm text-muted-foreground">tu.email@ejemplo.com</p>
+                      <p className="text-sm text-muted-foreground">sanchezbisaack@gmail.com</p>
                     </div>
                   </div>
                 </Card>
@@ -47,7 +47,7 @@ export function ContactSection() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Teléfono</h3>
-                      <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-sm text-muted-foreground">+52 7791254656</p>
                     </div>
                   </div>
                 </Card>
@@ -60,56 +60,12 @@ export function ContactSection() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Ubicación</h3>
-                      <p className="text-sm text-muted-foreground">Ciudad, País</p>
+                      <p className="text-sm text-muted-foreground">Pachuca, México</p>
                     </div>
                   </div>
                 </Card>
               </ScrollReveal>
             </div>
-            <ScrollReveal delay={150}>
-              <Card className="p-6 hover-lift transition-all duration-300">
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">
-                      Nombre
-                    </label>
-                    <Input
-                      id="name"
-                      placeholder="Tu nombre"
-                      required
-                      className="transition-all duration-300 focus:scale-[1.02]"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="tu@email.com"
-                      required
-                      className="transition-all duration-300 focus:scale-[1.02]"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Mensaje
-                    </label>
-                    <Textarea
-                      id="message"
-                      placeholder="Cuéntame sobre tu proyecto..."
-                      rows={5}
-                      required
-                      className="transition-all duration-300 focus:scale-[1.02]"
-                    />
-                  </div>
-                  <Button type="submit" className="w-full hover-glow">
-                    Enviar Mensaje
-                  </Button>
-                </form>
-              </Card>
-            </ScrollReveal>
           </div>
         </div>
       </div>
