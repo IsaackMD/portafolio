@@ -6,17 +6,18 @@ function DeveloperProfile() {
   return (
     <div className="code-window" aria-label="Resumen técnico en formato JSON">
       <div className="code-window__bar"><span /><span /><span /><strong>developer.json</strong></div>
-      <pre><code>{`{
-  "title": "Full Stack Developer",
-  "focus": [".NET", "React", "Node.js"],
-  "strengths": [
-    "Production systems",
-    "Relational data",
-    "API integration"
-  ],
-  "mindset": "Understand. Build. Validate.",
-  "location": "Pachuca, MX"
-}`}</code></pre>
+      <pre><code>
+        <span className="syntax-punctuation">{"{"}</span>{"\n  "}
+        <span className="syntax-key">&quot;title&quot;</span><span className="syntax-punctuation">: </span><span className="syntax-string">&quot;Full Stack Developer&quot;</span><span className="syntax-punctuation">,</span>{"\n  "}
+        <span className="syntax-key">&quot;focus&quot;</span><span className="syntax-punctuation">: </span><span className="syntax-bracket">[</span><span className="syntax-string">&quot;.NET&quot;</span><span className="syntax-punctuation">, </span><span className="syntax-string">&quot;React&quot;</span><span className="syntax-punctuation">, </span><span className="syntax-string">&quot;Node.js&quot;</span><span className="syntax-bracket">]</span><span className="syntax-punctuation">,</span>{"\n  "}
+        <span className="syntax-key">&quot;strengths&quot;</span><span className="syntax-punctuation">: </span><span className="syntax-bracket">[</span>{"\n    "}
+        <span className="syntax-string">&quot;Production systems&quot;</span><span className="syntax-punctuation">,</span>{"\n    "}
+        <span className="syntax-string">&quot;Relational data&quot;</span><span className="syntax-punctuation">,</span>{"\n    "}
+        <span className="syntax-string">&quot;API integration&quot;</span>{"\n  "}<span className="syntax-bracket">]</span><span className="syntax-punctuation">,</span>{"\n  "}
+        <span className="syntax-key">&quot;mindset&quot;</span><span className="syntax-punctuation">: </span><span className="syntax-string">&quot;Understand. Build. Validate.&quot;</span><span className="syntax-punctuation">,</span>{"\n  "}
+        <span className="syntax-key">&quot;location&quot;</span><span className="syntax-punctuation">: </span><span className="syntax-string">&quot;Pachuca, MX&quot;</span>{"\n"}
+        <span className="syntax-punctuation">{"}"}</span>
+      </code></pre>
     </div>
   )
 }

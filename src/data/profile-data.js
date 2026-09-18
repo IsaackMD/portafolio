@@ -98,6 +98,10 @@ export const projects = [
     technologies: ["React", "TypeScript", ".NET 8", "PostgreSQL", "AWS", "Docker"],
     demo: "https://fitadminpro.acabeck.com/login",
     accent: "cyan",
+    images: [
+      "/imgs/fit-admin-pro/dashboard_fitadmin.png",
+      "/imgs/fit-admin-pro/configuracion_fitadmin.png",
+    ],
   },
   {
     kind: "Caso de producción",
@@ -143,8 +147,28 @@ export const skillGroups = [
 ]
 
 export const credentials = [
-  { title: "AWS Cloud Practitioner Essentials", issuer: "AWS Training & Certification", year: "2026" },
-  { title: "AWS Cloud Quest: Cloud Practitioner", issuer: "AWS Skill Builder", year: "2026" },
-  { title: "Cloud Computing Foundations", issuer: "Google Cloud", year: "2024" },
-  { title: "English B2 Upper Intermediate", issuer: "EF SET", year: "2024" },
+  {
+    title: "AWS Cloud Practitioner Essentials",
+    issuer: "AWS Training & Certification",
+    year: "2026",
+    url: "/imgs/Certificado/AWS_Cloud_Practitioner.pdf",
+  },
+  {
+    title: "AWS Cloud Quest: Cloud Practitioner",
+    issuer: "AWS Skill Builder",
+    year: "2026",
+    url: "https://www.credly.com/badges/7770c19f-6a1f-4164-bf51-9a3f6df354b3/linked_in_profile",
+  },
+  {
+    title: "Cloud Computing Foundations",
+    issuer: "Google Cloud",
+    year: "2024",
+    url: "https://www.credly.com/badges/890402d1-0762-4950-b257-53b380c2efc4/linked_in_profile",
+  },
+  {
+    title: "English B2 Upper Intermediate",
+    issuer: "EF SET",
+    year: "2024",
+    url: "https://cert.efset.org/HAedfP?trk=public_profile_see-credential",
+  },
 ]

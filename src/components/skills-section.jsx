@@ -6,18 +6,33 @@ const iconMap = {
   React: "/icons/react.webp",
   TypeScript: "/icons/ts.webp",
   JavaScript: "/icons/javascript.webp",
+  Vite: "/icons/vite.svg",
+  "React Router": "/icons/react-router.svg",
   "Tailwind CSS": "/icons/tailwind.png",
   "C#": "/icons/csharp.svg",
+  ".NET 8": "/icons/net_framework.webp",
+  "ASP.NET Core": "/icons/aspnet-core.svg",
+  "Node.js": "/icons/node.webp",
+  Express: "/icons/express.svg",
+  "PHP / Symfony": "/icons/php-symfony.svg",
   PostgreSQL: "/icons/postgre.webp",
   "SQL Server": "/icons/sqlserver.png",
+  MongoDB: "/icons/mongodb.svg",
+  "EF Core": "/icons/ef-core.svg",
   Sequelize: "/icons/sequelize.png",
+  LINQ: "/icons/linq.svg",
+  "AWS EC2": "/icons/aws-ec2.svg",
+  Docker: "/icons/docker.svg",
+  Nginx: "/icons/nginx.svg",
+  Linux: "/icons/linux.svg",
+  "SSL / TLS": "/icons/ssl-tls.svg",
   "Git / GitHub": "/icons/github.svg",
 }
 
 function TechnologyChip({ item }) {
   return (
     <div className="skill-chip">
-      {iconMap[item.skill] ? <img src={iconMap[item.skill]} alt="" width="22" height="22" loading="lazy" /> : <span>{item.skill.slice(0, 2)}</span>}
+      <img src={iconMap[item.skill]} alt="" width="22" height="22" loading="lazy" />
       <strong>{item.skill}</strong>
     </div>
   )

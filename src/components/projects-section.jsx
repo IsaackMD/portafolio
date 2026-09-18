@@ -3,9 +3,18 @@ import { projects } from "../data/profile-data"
 import { ScrollReveal } from "./scroll-reveal"
 import { SectionHeading } from "./section-heading"
 
-function ProjectVisual({ accent }) {
+function ProjectVisual({ project }) {
+  if (project.images?.length) {
+    return (
+      <div className="project-visual project-visual--screenshots">
+        <img src={project.images[0]} alt="Dashboard de FitAdminPro" loading="lazy" />
+        <img src={project.images[1]} alt="Configuración de FitAdminPro" loading="lazy" />
+      </div>
+    )
+  }
+
   return (
-    <div className={`project-visual project-visual--${accent}`} aria-hidden="true">
+    <div className={`project-visual project-visual--${project.accent}`} aria-hidden="true">
       <div className="project-visual__chrome"><span /><span /><span /></div>
       <div className="project-visual__sidebar" />
       <div className="project-visual__canvas">
@@ -18,7 +27,7 @@ function ProjectVisual({ accent }) {
 function ProjectCard({ project, index }) {
   return (
     <article className="console-card project-card">
-      <ProjectVisual accent={project.accent} />
+      <ProjectVisual project={project} />
       <div className="project-card__copy">
         <div className="project-card__meta"><span>{project.kind}</span><strong>0{index + 1}</strong></div>
         <h3>{project.title}</h3>
