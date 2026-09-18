@@ -1,74 +1,33 @@
-import { Button } from "./ui/button"
-import { Card } from "./ui/card"
-import { Input } from "./ui/input"
-import { Textarea } from "./ui/textarea"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { ArrowUpRight, Download, Github, Linkedin, Mail, MapPin } from "lucide-react"
+import { profile } from "../data/profile-data"
 import { ScrollReveal } from "./scroll-reveal"
+import { Button } from "./ui/button"
 
 export function ContactSection() {
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Aquí iría la lógica para enviar el formulario
-    console.log("Formulario enviado")
-  }
-
   return (
-    <section id="contact" className="py-24 px-4 bg-muted/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="space-y-12">
-          <ScrollReveal>
-            <div className="space-y-4 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold">Contacto</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                ¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte
-              </p>
-            </div>
-          </ScrollReveal>
-          <div className="gap-8">
-            <div className="space-y-6">
-              <ScrollReveal delay={100}>
-                <Card className="p-6 space-y-4 hover-lift hover:border-accent/50 transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-accent/10 transition-all duration-300 hover:bg-accent/20 hover:scale-110">
-                      <Mail className="w-5 h-5 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-sm text-muted-foreground">sanchezbisaack@gmail.com</p>
-                    </div>
-                  </div>
-                </Card>
-              </ScrollReveal>
-              <ScrollReveal delay={200}>
-                <Card className="p-6 space-y-4 hover-lift hover:border-accent/50 transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-accent/10 transition-all duration-300 hover:bg-accent/20 hover:scale-110">
-                      <Phone className="w-5 h-5 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Teléfono</h3>
-                      <p className="text-sm text-muted-foreground">+52 7791254656</p>
-                    </div>
-                  </div>
-                </Card>
-              </ScrollReveal>
-              <ScrollReveal delay={300}>
-                <Card className="p-6 space-y-4 hover-lift hover:border-accent/50 transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-accent/10 transition-all duration-300 hover:bg-accent/20 hover:scale-110">
-                      <MapPin className="w-5 h-5 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Ubicación</h3>
-                      <p className="text-sm text-muted-foreground">Pachuca, México</p>
-                    </div>
-                  </div>
-                </Card>
-              </ScrollReveal>
+    <section id="contact" className="section-shell contact-section">
+      <ScrollReveal variant="scale">
+        <div className="contact-console">
+          <div>
+            <span className="contact-console__prompt">kevin@portfolio:~$</span>
+            <h2>Construyamos algo que llegue a <strong>producción.</strong></h2>
+            <p>Estoy abierto a oportunidades Full Stack, Backend .NET y Frontend React donde pueda aportar ownership, criterio técnico y cercanía con el producto.</p>
+          </div>
+          <div className="contact-console__actions">
+            <Button asChild size="lg"><a href={`mailto:${profile.email}`}><Mail /> Enviar correo</a></Button>
+            <Button asChild size="lg" variant="outline"><a href={profile.cv} download><Download /> Descargar CV</a></Button>
+            <div className="contact-socials">
+              <a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin /> LinkedIn <ArrowUpRight /></a>
+              <a href={profile.github} target="_blank" rel="noreferrer"><Github /> GitHub <ArrowUpRight /></a>
             </div>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
+      <footer className="site-footer">
+        <span className="footer-brand">&lt; K.<strong>S</strong> /&gt;</span>
+        <span><MapPin /> Pachuca de Soto, México</span>
+        <span>© 2026 {profile.name}</span>
+      </footer>
     </section>
   )
 }

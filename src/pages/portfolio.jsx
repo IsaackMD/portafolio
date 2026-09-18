@@ -1,24 +1,29 @@
-import React from 'react'
-import { AnimatedBackground } from '../components/animated-background'
-import { Navigation } from '../components/navigation'
-import { HomeSection } from '../components/home-section'
 import { AboutSection } from '../components/about-section'
-import { SkillsSection } from '../components/skills-section'
-import { AchievementsSection } from '../components/archievements-section'
-import { ProjectsSection } from '../components/projects-section'
+import { AnimatedBackground } from '../components/animated-background'
 import { ContactSection } from '../components/contact-section'
-export const Portfolio = () => {
+import { CustomCursor } from '../components/custom-cursor'
+import { ExperienceSection } from '../components/experience-section'
+import { GithubActivity } from '../components/github-activity'
+import { HomeSection } from '../components/home-section'
+import { Navigation } from '../components/navigation'
+import { ProjectsSection } from '../components/projects-section'
+import { SkillsSection } from '../components/skills-section'
+
+export function Portfolio() {
   return (
-    <div className="min-h-screen">
-      <AnimatedBackground></AnimatedBackground>
-      <Navigation></Navigation>
-      <main>
-        <HomeSection></HomeSection>
-        <AboutSection></AboutSection>
-        <SkillsSection></SkillsSection>
-        <AchievementsSection></AchievementsSection>
-        <ProjectsSection></ProjectsSection>
-        <ContactSection></ContactSection>
+    <div className="min-h-screen overflow-clip">
+      <a className="skip-link" href="#main-content">Saltar al contenido</a>
+      <AnimatedBackground />
+      <CustomCursor />
+      <Navigation />
+      <main id="main-content">
+        <HomeSection />
+        <AboutSection />
+        <GithubActivity />
+        <ProjectsSection />
+        <ExperienceSection />
+        <SkillsSection />
+        <ContactSection />
       </main>
     </div>
   )

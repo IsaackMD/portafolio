@@ -1,6 +1,6 @@
-const plugin = require('tailwindcss/plugin');
+import plugin from 'tailwindcss/plugin'
 
-module.exports = {
+export default {
   content: ['./src/**/*.{html,js,jsx,ts,tsx}'], // tus rutas
   darkMode: 'class', // activa modo oscuro basado en clase `.dark`
   plugins: [
@@ -8,4 +8,4 @@ module.exports = {
       addVariant('custom-dark', '&:is(.dark *)'); // este es el equivalente a tu línea
     }),
   ],
-};
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-17T20:30:00-06:00",
+  "title": "Design System: Kevin Sánchez Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "signal-orange": { "role": "primary", "displayName": "Signal Orange", "canonical": "#ff5a16", "tonalRamp": ["#421400", "#6c2000", "#982f05", "#c9400b", "#ff5a16", "#ff7b3a", "#ffad7b", "#ffe0c9"] },
+      "coal": { "role": "neutral", "displayName": "Night Coal", "canonical": "#07090a", "tonalRamp": ["#050606", "#0b0d0e", "#151819", "#282c2e", "#474c4e", "#73797b", "#afb4b5", "#eef0f0"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Technical Display", "purpose": "Short headlines, names and data-led titles." },
+      "body": { "displayName": "Editorial Body", "purpose": "Professional narrative and descriptive copy." }
+    },
+    "shadows": [
+      { "name": "stage-depth", "value": "0 30px 90px rgba(0,0,0,.42)", "purpose": "Separate the photographic hero stage from the page." },
+      { "name": "signal-glow", "value": "0 0 18px rgba(255,90,22,.8)", "purpose": "Status points and identity framing only." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "Confident viewport-aware panel arrivals." },
+      { "name": "card-reveal", "value": "500ms opacity and 660ms transform", "purpose": "Cards enter vertically, laterally or by scale and reset outside the viewport." },
+      { "name": "technology-stream", "value": "30s to 36s linear transform loop", "purpose": "Three alternating technology streams that pause on interaction." }
+    ],
+    "breakpoints": [
+      { "name": "compact-desktop", "value": "1040px" },
+      { "name": "tablet", "value": "820px" },
+      { "name": "mobile", "value": "620px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main contact and download action.",
+      "html": "<button class=\"ds-btn-primary\">ENVIAR CORREO</button>",
+      "css": ".ds-btn-primary{background:#ff5a16;color:#f1eee8;border:1px solid #ff5a16;border-radius:.45rem;padding:.75rem 1rem;font:600 .75rem 'Azeret Mono',monospace;transition:background .18s ease}.ds-btn-primary:hover{background:#ff7133}.ds-btn-primary:focus-visible{outline:2px solid #ff5a16;outline-offset:3px}"
+    },
+    {
+      "name": "Console Card",
+      "kind": "card",
+      "refersTo": "card-console",
+      "description": "Evidence container for projects, capabilities and journey items.",
+      "html": "<article class=\"ds-console-card\">Production evidence</article>",
+      "css": ".ds-console-card{background:linear-gradient(145deg,#101516,#090c0d);color:#f1eee8;border:1px solid rgba(255,255,255,.095);border-radius:.72rem;padding:1.2rem}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Night Shift Workbench",
+    "overview": "A cinematic working software studio after dark: precise, warm and visibly used.",
+    "keyCharacteristics": ["Near-black surfaces with burnt-orange signals", "Dense editorial composition", "Photography plus console panels", "Viewport-aware power-on motion"],
+    "rules": [{ "name": "The Signal Rule", "body": "Orange identifies interaction, status or a meaningful phrase; it does not fill large reading surfaces.", "section": "colors" }],
+    "dos": ["Do use orange for actions and verified status.", "Do keep animation transform-based and reduced-motion safe."],
+    "donts": ["Don't invent professional evidence.", "Don't introduce rainbow neon or gaming UI decoration."]
+  }
+}

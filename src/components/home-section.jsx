@@ -1,100 +1,41 @@
-import { Button } from "./ui/button";
-import { Github, Linkedin, Mail } from "lucide-react";
-import { ScrollReveal } from "./scroll-reveal";
-import img from "../../public/yo.jpg";
+import { Download, Github, Linkedin, Mail, MapPin } from "lucide-react"
+import { profile } from "../data/profile-data"
+import { Button } from "./ui/button"
+
 export function HomeSection() {
-  const getExperience = () => {
-    const startDate = new Date(2025, 2); // Abril 2025
-    const now = new Date();
-
-    let years = now.getFullYear() - startDate.getFullYear();
-    let months = now.getMonth() - startDate.getMonth();
-
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
-
-    const yearText = years > 0 ? `${years} año${years > 1 ? "s" : ""}` : "";
-
-    const monthText =
-      months > 0 ? `${months} mes${months > 1 ? "es" : ""}` : "";
-
-    if (years > 0 && months > 0) {
-      return `${yearText} y ${monthText} de experiencia laboral`;
-    }
-
-    return `${yearText || monthText} de experiencia laboral`;
-  };
   return (
-    <section
-      id="hero"
-      className="min-h-screen flex items-center justify-center px-4 pt-20"
-    >
-      <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <ScrollReveal>
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <h1 className="text-5xl md:text-6xl font-bold text-balance">
-                  Full Stack Developer
-                </h1>
-                <p className="text-xl text-muted-foreground">
-                  {getExperience()}
-                </p>
-              </div>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Construyo aplicaciones web modernas y escalables utilizando las
-                últimas tecnologías. Apasionado por crear soluciones eficientes
-                tanto en el frontend como en el backend.
-              </p>
-              <div className="flex gap-4 pt-4">
-                <Button size="lg" className="gap-2 hover-glow">
-                  <Mail className="w-4 h-4" />
-                  Contactar
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="gap-2 bg-transparent hover-glow"
-                  onClick={() => window.open("https://github.com/IsaackMD")}
-                >
-                  <Github className="w-4 h-4" />
-                  GitHub
-                </Button>
-              </div>
-              <div className="flex gap-4 pt-2">
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-125"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://mx.linkedin.com/in/kisb03?trk=people-guest_people_search-card"
-                  target="_blank"
-                  className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-125"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-125"
-                >
-                  <Mail className="w-5 h-5" />
-                </a>
-              </div>
+    <section id="hero" className="hero-section section-shell">
+      <div className="hero-stage">
+        <img className="hero-stage__image" src="/imgs/dev-workspace-night.png" alt="" width="1920" height="768" fetchPriority="high" />
+        <div className="hero-stage__shade" />
+        <div className="hero-stage__signature" aria-hidden="true">
+          <span>Build.</span><span>Ship.</span><span>Improve.</span>
+        </div>
+
+        <div className="hero-profile">
+          <div className="portrait-ring">
+            <img src="/yo.jpg" alt="Kevin Sánchez" width="320" height="320" fetchPriority="high" />
+            <span className="portrait-ring__status" />
+          </div>
+          <div className="hero-profile__copy">
+            <div className="status-pill"><span /> Disponible para oportunidades</div>
+            <p className="hero-kicker">Kevin Isaac Sánchez Benítez</p>
+            <h1>Full Stack <strong>Developer.</strong></h1>
+            <p>React, .NET y Node.js para convertir requerimientos reales en software que llega a producción.</p>
+            <div className="hero-meta">
+              <span><MapPin /> Pachuca de Soto, México</span>
+              <a href={`mailto:${profile.email}`}><Mail /> {profile.email}</a>
             </div>
-          </ScrollReveal>
-          <ScrollReveal delay={200}>
-            <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 animate-gradient animate-float">
-                <img src={img} width={1000} className="rounded-2xl"></img>
-              </div>
-            </div>
-          </ScrollReveal>
+          </div>
+        </div>
+
+        <div className="hero-stage__socials" aria-label="Perfiles profesionales">
+          <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github /></a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin /></a>
+          <a href={`mailto:${profile.email}`} aria-label="Correo electrónico"><Mail /></a>
+          <Button asChild variant="outline" size="sm"><a href={profile.cv} download><Download /> CV</a></Button>
         </div>
       </div>
     </section>
-  );
+  )
 }

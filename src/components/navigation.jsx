@@ -1,76 +1,78 @@
-"use client"
-
-import { useState, useEffect } from "react"
+import { addTransitionType, startTransition, useEffect, useState, ViewTransition } from "react"
+import { Download, Menu, X } from "lucide-react"
+import { navigationItems, profile } from "../data/profile-data"
+import { Button } from "./ui/button"
 
 export function Navigation() {
-    const [activeSection, setActiveSection] = useState("hero")
-    const [isScrolled, setIsScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState("hero")
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50)
-
-            const sections = ["hero", "about", "skills", "projects", "contact"]
-            const current = sections.find((section) => {
-                const element = document.getElementById(section)
-                if (element) {
-                    const rect = element.getBoundingClientRect()
-                    return rect.top <= 100 && rect.bottom >= 100
-                }
-                return false
-            })
-            if (current) setActiveSection(current)
-        }
-
-        window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
-
-    const scrollToSection = (sectionId) => {
-        const element = document.getElementById(sectionId)
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" })
-        }
-    }
-
-    return (
-        <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                ? "bg-[#0b0b12]/90 backdrop-blur-md border-b border-white/10 shadow-[0_1px_0_0_rgba(255,255,255,0.04)]"
-                : "bg-[#0b0b12]/70 backdrop-blur-sm border-b border-white/5"
-                }`}
-        >
-            <div className="container mx-auto px-4 py-4">
-                <div className="flex items-center justify-between">
-                    <div className="text-lg font-semibold transition-all duration-300 hover:scale-110 hover:text-accent cursor-pointer">
-                        Portfolio
-                    </div>
-                    <div className="hidden md:flex items-center gap-6">
-                        {[
-                            { id: "hero", label: "Inicio" },
-                            { id: "about", label: "Sobre mí" },
-                            { id: "skills", label: "Habilidades" },
-                            { id: "projects", label: "Proyectos" },
-                            { id: "contact", label: "Contacto" },
-                        ].map((item) => (
-                            <button
-                                key={item.id}
-                                onClick={() => scrollToSection(item.id)}
-                                className={`text-sm transition-all duration-300 relative group ${activeSection === item.id
-                                    ? "text-foreground font-medium"
-                                    : "text-muted-foreground hover:text-foreground"
-                                    }`}
-                            >
-                                {item.label}
-                                <span
-                                    className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ${activeSection === item.id ? "w-full" : "w-0 group-hover:w-full"
-                                        }`}
-                                />
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </nav >
+  useEffect(() => {
+    const sections = navigationItems.map(({ id }) => document.getElementById(id)).filter(Boolean)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+        if (visible) setActiveSection(visible.target.id)
+      },
+      { rootMargin: "-20% 0px -65%", threshold: [0, 0.25, 0.5] },
     )
+
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (!element) return
+
+    startTransition(() => {
+      addTransitionType("nav-lateral")
+      setActiveSection(sectionId)
+      setIsMenuOpen(false)
+    })
+    element.scrollIntoView({ behavior: "smooth", block: "start" })
+  }
+
+  return (
+    <nav className="site-nav" aria-label="Navegación principal" style={{ viewTransitionName: "persistent-nav" }}>
+      <div className="site-nav__inner">
+        <button className="brand-mark" onClick={() => scrollToSection("hero")} aria-label="Ir al inicio">
+          <span>&lt;K.<b>S</b>/&gt;</span>
+          <span className="brand-mark__text">Full Stack Developer</span>
+        </button>
+
+        <div className="site-nav__links">
+          {navigationItems.map((item) => (
+            <button key={item.id} onClick={() => scrollToSection(item.id)} className="nav-link" aria-current={activeSection === item.id ? "page" : undefined}>
+              {item.label}
+              {activeSection === item.id ? (
+                <ViewTransition name="active-nav-indicator" share="morph" default="none">
+                  <span className="nav-link__indicator" />
+                </ViewTransition>
+              ) : null}
+            </button>
+          ))}
+        </div>
+
+        <Button asChild size="sm" className="site-nav__cv">
+          <a href={profile.cv} download><Download /> Descargar CV</a>
+        </Button>
+
+        <button className="menu-toggle" onClick={() => setIsMenuOpen((open) => !open)} aria-expanded={isMenuOpen} aria-controls="mobile-navigation" aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}>
+          {isMenuOpen ? <X /> : <Menu />}
+        </button>
+      </div>
+
+      {isMenuOpen ? (
+        <div id="mobile-navigation" className="mobile-nav">
+          {navigationItems.map((item) => (
+            <button key={item.id} onClick={() => scrollToSection(item.id)} aria-current={activeSection === item.id ? "page" : undefined}>{item.label}</button>
+          ))}
+          <a href={profile.cv} download>Descargar CV</a>
+        </div>
+      ) : null}
+    </nav>
+  )
 }
