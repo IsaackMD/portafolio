@@ -5,10 +5,18 @@ import { SectionHeading } from "./section-heading"
 
 function ProjectVisual({ project }) {
   if (project.images?.length) {
+    const hasGallery = project.images.length > 1
+
     return (
-      <div className="project-visual project-visual--screenshots">
-        <img src={project.images[0]} alt="Dashboard de FitAdminPro" loading="lazy" />
-        <img src={project.images[1]} alt="Configuración de FitAdminPro" loading="lazy" />
+      <div className={`project-visual project-visual--screenshots project-visual--${hasGallery ? "gallery" : "single"}`}>
+        {project.images.map((image, index) => (
+          <img
+            src={image}
+            alt={`${project.title} — captura ${index + 1}`}
+            loading="lazy"
+            key={image}
+          />
+        ))}
       </div>
     )
   }

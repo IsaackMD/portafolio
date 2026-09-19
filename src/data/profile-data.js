@@ -111,6 +111,9 @@ export const projects = [
     impact: "~20 usuarios internos",
     technologies: ["React", "Node.js", "Express", "PostgreSQL", "WebSockets", "FCM"],
     accent: "violet",
+    images: [
+      "/imgs/Gestion_Proyectos_Tareas/Gestion_proyectos_tareas.png",
+    ],
   },
   {
     kind: "Modernización de datos",
@@ -120,6 +123,9 @@ export const projects = [
     impact: "Decenas de miles de registros",
     technologies: ["Python", "PostgreSQL", "Sequelize", "React", "Express"],
     accent: "amber",
+    images: [
+      "/imgs/SIRIT/SIRIT.png",
+    ],
   },
 ]
 

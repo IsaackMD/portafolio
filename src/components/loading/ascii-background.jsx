@@ -1,20 +1,26 @@
+import { halloweenAsciiArt } from '../../data/halloween-ascii'
+import { BackgroundSparks } from '../background-sparks'
+
 const shapes = [
-  { shape: "ghost", text: ".:+..++:..+.\n++:++++:+..\n+.+..+..+++.\n..++++++...\n...+..+....", className: "one" },
-  { shape: "pumpkin", text: "..+++++..\n.+:+++:+.\n++++.++++\n.+:+++:+.\n..+++++..", className: "two" },
-  { shape: "abstract", text: "+..:..+\n..++...\n+:..:+..\n...+...", className: "three" },
-  { shape: "ghost", text: "..++++..\n.+..+.+.\n+++++++.\n+.+..++.\n..+..+..", className: "four" },
-  { shape: "pumpkin", text: "..:+++:.\n.+.+++.+\n++++.+++\n.+.+++.+\n..:+++:." , className: "five" },
-  { shape: "abstract", text: "++...++\n.:++:..\n..+...+\n+..:...", className: "six" },
-  { shape: "ghost", text: ".+..++..\n++++..+.\n+.+..++.\n+++++++.\n..+..+..", className: "seven" },
-  { shape: "abstract", text: "..+....\n+..:++..\n..++...\n.+...+.", className: "eight" },
-  { shape: "pumpkin", text: "..++++..\n.+:++:+.\n++++.+++\n.+:++:+.\n..++++..", className: "nine" },
+  { shape: "ghost", art: 0, className: "one" },
+  { shape: "pumpkin", art: 0, className: "two" },
+  { shape: "ghost", art: 1, className: "three" },
+  { shape: "ghost", art: 0, className: "four" },
+  { shape: "pumpkin", art: 1, className: "five" },
+  { shape: "pumpkin", art: 0, className: "six" },
+  { shape: "ghost", art: 1, className: "seven" },
+  { shape: "pumpkin", art: 1, className: "eight" },
+  { shape: "ghost", art: 0, className: "nine" },
 ]
 
-function DotArt({ text }) {
+export function AsciiFigure({ text }) {
   return text.split("\n").map((line, lineIndex) => (
     <span className="ascii-background__line" key={`${line}-${lineIndex}`}>
       {line.split("").map((character, characterIndex) => (
-        <span className={character === "+" && characterIndex % 3 === 0 ? "ascii-background__flicker" : undefined} key={`${character}-${characterIndex}`}>
+        <span
+          className={character === "+" && characterIndex % 3 === 0 ? "ascii-background__flicker" : undefined}
+          key={`${character}-${characterIndex}`}
+        >
           {character}
         </span>
       ))}
@@ -25,9 +31,10 @@ function DotArt({ text }) {
 export function AsciiBackground() {
   return (
     <div className="ascii-background" aria-hidden="true">
-      {shapes.map(({ shape, text, className }) => (
+      <BackgroundSparks />
+      {shapes.map(({ shape, art, className }) => (
         <pre className={`ascii-background__shape ascii-background__shape--${shape} ascii-background__shape--${className}`} key={className}>
-          <DotArt text={text} />
+          <AsciiFigure text={halloweenAsciiArt[shape][art]} />
         </pre>
       ))}
     </div>

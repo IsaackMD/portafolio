@@ -31,7 +31,7 @@ export function Portfolio() {
   }, [])
 
   return (
-    <div className="min-h-screen overflow-clip">
+    <div className="portfolio-shell">
       {showLoader ? (
         <ViewTransition exit="fade-out" default="none">
           <PortfolioLoader onComplete={completeIntro} />
@@ -41,7 +41,7 @@ export function Portfolio() {
       <AnimatedBackground />
       <CustomCursor />
       <Navigation />
-      <main id="main-content">
+      <main className="portfolio-main" id="main-content">
         <HomeSection />
         <AboutSection />
         <GithubActivity />
